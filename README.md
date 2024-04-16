@@ -35,3 +35,35 @@ Log in to the AWS Management Console.
 Navigate to the EC2 dashboard.
 Select your EC2 instance.
 Click on the Connect button to get connection details.
+
+## Install Python 3 and python3-pip
+Once connected to your EC2 instance, run the following commands to install Python 3 and python3-pip.
+
+```
+sudo yum update -y
+sudo yum install python3 -y
+sudo yum install python3-pip -y
+```
+
+## Install Streamlit
+Install Streamlit using pip.
+
+```
+pip3 install streamlit
+```
+
+## Modify Security Group Inbound Rules
+To modify the inbound rules of your EC2 instance's security group to allow traffic on port 8501, follow these steps:
+
+- Log in to the AWS Management Console.
+- Navigate to the EC2 dashboard.
+- In the navigation pane, click on Security Groups.
+- Select the security group associated with your EC2 instance.
+- Click on the Inbound rules tab.
+- Click on Edit inbound rules.
+- Add a new rule with the following settings:
+- Type: Custom TCP
+- Protocol: TCP
+- Port Range: 8501
+- Source: Anywhere (0.0.0.0/0, ::/0)
+- Click Save rules.
